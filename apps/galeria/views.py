@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from galeria.models import Fotografia
+from apps.galeria.models import Fotografia
 from django.contrib import messages
 def index(request):
     if not request.user.is_authenticated:
@@ -27,3 +27,12 @@ def buscar(request):
 
 
     return render(request, 'galeria/buscar.html', {"cards" : fotografias})
+
+def nova_imagem(request):
+    return render(request, 'galeria/nova_imagem.html')
+
+def editar_imagem(request):
+    pass
+
+def excluir_imagem(request):
+    pass
